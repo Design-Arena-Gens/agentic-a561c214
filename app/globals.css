@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --header-height: 4.5rem;
+}
+
+body {
+  @apply bg-brand-surface text-brand-primary antialiased;
+}
+
+a {
+  @apply text-brand-secondary hover:text-brand-accent transition-colors;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(56, 189, 248, 0.5), rgba(244, 114, 182, 0.35));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.card-surface {
+  @apply bg-white rounded-3xl shadow-fly border border-white/30;
+}
+
+.section-padding {
+  @apply py-20 md:py-28;
+}
+
+.section-heading {
+  @apply font-display text-3xl md:text-5xl tracking-tight leading-tight;
+}
+
+.subheading {
+  @apply uppercase text-sm tracking-[0.4em] text-brand-muted font-medium;
+}
